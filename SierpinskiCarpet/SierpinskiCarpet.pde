@@ -7,7 +7,14 @@ void setup() {
     pos    = new PVector(0,0);// carpet center
     carpet = new ArrayList<Square>();
     carpet.add(new Square(pos,486));// initial square
-    carpet = carpet.get(0).Split();//  level 1
+}
+
+void mousePressed() {
+    ArrayList<Square> new_carpet = new ArrayList<Square>();
+    for(Square square : carpet) {
+        new_carpet.addAll(square.Split());
+    }
+    carpet = new_carpet;// update carpet
 }
 
 void draw() {
